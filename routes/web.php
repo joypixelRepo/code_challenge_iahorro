@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing_form');
 });
+
+Route::post('/', 'App\Http\Controllers\FormController@create')->name('create_request');
