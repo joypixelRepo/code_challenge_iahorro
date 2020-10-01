@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('landing_form');
 });
 
-Route::post('/', 'App\Http\Controllers\FormController@create')->name('create_request');
+Route::post('/', 'App\Http\Controllers\ClientController@store')->name('clients.store');
