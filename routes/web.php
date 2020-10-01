@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,4 @@ Route::get('/', function () {
     return view('landing_form');
 });
 
-Route::post('/', 'App\Http\Controllers\ClientController@store')->name('clients.store');
+Route::post('/', [ClientController::class, 'store'])->name('clients.store');
