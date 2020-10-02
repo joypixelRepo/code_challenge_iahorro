@@ -8,8 +8,6 @@ class ApiController extends Controller
 {
     public function index($expertId)
     {
-        // ( Cantidad solicitada / Ingresos Netos ) * Horas que lleva en el sistema "fecha y hora de registro a fecha hora actual".
-
         $clientsData = \DB::table('clients')->where('expert', $expertId)->get();
         $clients = json_decode($clientsData, true);
 
@@ -28,7 +26,6 @@ class ApiController extends Controller
 
     private function dateDiff($date) {
         $starttime = strtotime($date);
-        /* do stuff here */
         $endtime = microtime(true);
         return round(($endtime - $starttime) / 1000, 2);
     }
