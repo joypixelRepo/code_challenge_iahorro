@@ -1,11 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;
 
-/*!
- * Bootstrap v4.5.2 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+400;600&display=swap);@charset "UTF-8";
 
 :root {
   --blue: #3490dc;
@@ -10897,5 +10892,172 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  background: transparent;
+}
+
+.bg {
+  background: url(/img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px 0 140px 0;
+}
+
+.bg h1,
+.bg p {
+  color: #fff;
+}
+
+.bg h1 {
+  font-size: 48px;
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+.bg p {
+  font-size: 17px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+nav {
+  margin-bottom: 80px;
+}
+
+nav .navbar-brand img {
+  width: 140px;
+  height: auto;
+}
+
+nav .navbar-brand {
+  margin-right: 60px;
+}
+
+nav a.nav-link {
+  color: #fff !important;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+nav a.nav-link:hover {
+  color: #29ddb9 !important;
+}
+
+.form-box {
+  padding: 25px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px #00000042;
+}
+
+.form-box h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+form label.err {
+  color: #29ddb9;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+form label.form-label {
+  color: #173259;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+form .form-input-box {
+  padding-bottom: 8px;
+}
+
+form input[type=text],
+form input[type=email],
+form input[type=tel],
+form select {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid #29ddb9;
+  border-radius: 4px;
+  padding: 14px 13px;
+  outline: none;
+}
+
+form button[type=submit] {
+  padding: 11px 30px;
+  background-color: #29ddb9;
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+  outline: none;
+}
+
+form button[type=submit] img {
+  width: auto;
+  height: 22px;
+  vertical-align: text-top;
+  margin-right: 8px;
+}
+
+/* WebKit, Blink, Edge */
+
+::-webkit-input-placeholder {
+  font-size: 13px;
+  color: #a5a5a5;
+}
+
+/* Mozilla Firefox 4 to 18 */
+
+:-moz-placeholder {
+  font-size: 13px;
+  color: #a5a5a5;
+}
+
+/* Mozilla Firefox 19+ */
+
+::-moz-placeholder {
+  font-size: 13px;
+  color: #a5a5a5;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-size: 13px;
+  color: #a5a5a5;
+}
+
+/* Microsoft Edge */
+
+::-ms-input-placeholder {
+  font-size: 13px;
+  color: #a5a5a5;
+}
+
+/* Most modern browsers support this now. */
+
+::-moz-placeholder {
+  font-size: 13px;
+  color: #a5a5a5;
+}
+
+:-ms-input-placeholder {
+  font-size: 13px;
+  color: #a5a5a5;
+}
+
+::placeholder {
+  font-size: 13px;
+  color: #a5a5a5;
 }
 

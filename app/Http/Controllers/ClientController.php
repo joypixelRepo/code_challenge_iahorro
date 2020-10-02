@@ -35,7 +35,7 @@ class ClientController extends Controller
      */
 
     private function getRandomExpert() {
-        $randomExpert = \DB::table('experts')->inRandomOrder()->pluck('expert_id')->first();
+        $randomExpert = \DB::table('experts')->inRandomOrder()->pluck('id')->first();
         return $randomExpert;
     }
 
@@ -52,11 +52,11 @@ class ClientController extends Controller
           'net_income'        => 'required',
           'requested_amount'  => 'required',
           'time_slot'         => 'required',
-          'expert'            => 'required',
         ]);
 
-        Client::create([
+        return Client::create([
           'first_name'        => request('first_name'),
+          'last_name'         => request('last_name'),
           'email'             => request('email'),
           'phone'             => request('phone'),
           'net_income'        => request('net_income'),
@@ -65,7 +65,7 @@ class ClientController extends Controller
           'expert'            => $this->getRandomExpert(),
         ]);
 
-        return redirect()->route('landing_form');
+        //return redirect()->route('landing_form');
     }
 
     /**

@@ -15,7 +15,7 @@ use App\Http\Controllers\ClientController;
 */
 
 Route::get('/', function () {
-    return view('landing_form');
+    return view('home');
 });
 
 Route::post('/', [ClientController::class, 'store'])->name('clients.store');
