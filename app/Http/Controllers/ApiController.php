@@ -4,21 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ApiController extends Controller
-{
-    public function index($expertId)
-    {
+class ApiController extends Controller {
+
+    public function index($expertId) {
+        // obtener lista de clientes asociados al experto indicado en la URL
         $clientsData = \DB::table('clients')->where('expert', $expertId)->get();
+
+        // convertimos el JSON en un array
         $clients = json_decode($clientsData, true);
 
-        foreach ($clients as $clientKey => $clientValue) {
-          $elapsed_time = $this->dateDiff($clientValue['created_at']);
+        foreach ($clients as $clientKey => $client) {
+          // calcular horas transcurridas
+          $elapsed_time = $this->dateDiff($client['created_at']);
 
-          $scoring = ($clientValue['requested_amount'] / $clientValue['net_income']) * $elapsed_time;
+          // calcular el scoring
+          $scoring = ($client['requested_amount'] / $client['net_income']) * $elapsed_time;
           
+          // se añade el scoring al array del cliente
           $clients[$clientKey]['scoring'] = $scoring;
         }
 
+        // reordenar el array por el scoring de mayor a menor
         $clients = $this->orderByScoring($clients, 'scoring');
 
         return $clients;
@@ -49,4 +55,5 @@ class ApiController extends Controller
         }
         return $returnArray;
     }
+    
 }

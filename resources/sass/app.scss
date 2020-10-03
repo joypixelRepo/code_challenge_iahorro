@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
 
 // Variables
 @import 'variables';
@@ -25,8 +25,13 @@ header {
 }
 .bg h1 {
   font-size: 48px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
   font-weight: 700;
+}
+.bg h2 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 23px;
 }
 .bg p {
   font-size: 17px;
@@ -52,6 +57,25 @@ nav a.nav-link {
 nav a.nav-link:hover {
   color: rgb(41, 221, 185) !important;
 }
+.navbar-collapse.show .nav-item a.nav-link,
+.navbar-collapse.collapsing .nav-item a.nav-link {
+  color: #173259 !important;
+  padding: 8px 16px;
+}
+.navbar-collapse.show,
+.navbar-collapse.collapsing {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background: #fff;
+  padding: 6px 0;
+  z-index: 1;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 7px 10px #0000006e;
+}
+.navbar-dark .navbar-toggler {
+  outline: none;
+}
 .form-box {
   padding: 25px;
   background: #fff;
@@ -59,6 +83,7 @@ nav a.nav-link:hover {
   box-shadow: 0px 4px 10px #00000042;
 }
 .form-box h3 {
+  color: #173259;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 16px;
@@ -103,6 +128,19 @@ form button[type="submit"] img {
   vertical-align: text-top;
   margin-right: 8px;
 }
+label.policy input[type="checkbox"] {
+  margin-right: 5px;
+}
+label.policy {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+p.status {
+  color: #ff4343;
+  font-size: 14px;
+  line-height: 1.4;
+}
 /* WebKit, Blink, Edge */
 ::-webkit-input-placeholder {
   font-size: 13px;
@@ -131,4 +169,15 @@ form button[type="submit"] img {
 ::placeholder {
   font-size: 13px;
   color: #a5a5a5;
+}
+@media (max-width: 768px) {
+  .bg p {
+    font-size: 16px;
+  }
+  .bg h2 {
+    font-size: 22px;
+  }
+  .bg h1 {
+    font-size: 35px;
+  }
 }

@@ -5,42 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
+class ClientController extends Controller {
+    
     private function getRandomExpert() {
         $randomExpert = \DB::table('experts')->inRandomOrder()->pluck('id')->first();
         return $randomExpert;
     }
 
-    public function store()
-    {
+    public function store() {
         $fields = request()->validate([
           'first_name'        => 'required',
           'last_name'         => 'required',
@@ -49,12 +21,12 @@ class ClientController extends Controller
             'required',
             'regex:/^(\+34|0034|34)?[\s|\-|\.]?[6-9][\s|\-|\.]?([0-9][\s|\-|\.]?){8}$/'
           ],
-          'net_income'        => 'required',
-          'requested_amount'  => 'required',
-          'time_slot'         => 'required',
+          'net_income'        => 'required|numeric',
+          'requested_amount'  => 'required|numeric',
+          'time_slot'         => 'required|numeric',
         ]);
 
-        return Client::create([
+        Client::create([
           'first_name'        => request('first_name'),
           'last_name'         => request('last_name'),
           'email'             => request('email'),
@@ -65,51 +37,7 @@ class ClientController extends Controller
           'expert'            => $this->getRandomExpert(),
         ]);
 
-        //return redirect()->route('landing_form');
+        return redirect()->route('home', ['status' => 1]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
