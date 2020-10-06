@@ -11108,9 +11108,10 @@ label.policy input[type=checkbox] {
 }
 
 label.policy {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   margin-bottom: 0;
+  color: #173259;
 }
 
 p.status {

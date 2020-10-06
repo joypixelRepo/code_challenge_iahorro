@@ -32,13 +32,13 @@
               @csrf
               <div class="row">
                 <div class="col-lg-5 form-input-box">
-                  <label class="form-label">Nombre <sup>(*)</sup></label>
+                  <label class="form-label">Nombre</label>
                   <input type="text" name="first_name" value="{{ old('first_name') }}">
                   {!! $errors->first('first_name', '<label class="err">:message</label>') !!}
                 </div>
 
                 <div class="col-lg-7 form-input-box">
-                  <label class="form-label">Apellidos <sup>(*)</sup></label>
+                  <label class="form-label">Apellidos</label>
                   <input type="text" name="last_name" value="{{ old('last_name') }}">
                   {!! $errors->first('last_name', '<label class="err">:message</label>') !!}
                 </div>
@@ -46,35 +46,33 @@
 
               <div class="row">
                 <div class="col-lg-7 form-input-box">
-                  <label class="form-label">Correo electrónico <sup>(*)</sup></label>
+                  <label class="form-label">Correo electrónico</label>
                   <input type="email" name="email" value="{{ old('email') }}">
                   {!! $errors->first('email', '<label class="err">:message</label>') !!}
                 </div>
 
                 <div class="col-lg-5 form-input-box">
-                  <label class="form-label">Teléfono <sup>(*)</sup></label>
+                  <label class="form-label">Teléfono</label>
                   <input type="tel" name="phone" value="{{ old('phone') }}">
                   {!! $errors->first('phone', '<label class="err">:message</label>') !!}
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-lg-5 form-input-box">
-                  <label class="form-label">Ingresos netos <sup>(*)</sup></label>
+                <div class="col-lg-4 form-input-box">
+                  <label class="form-label">Ingresos netos</label>
                   <input type="text" name="net_income" value="{{ old('net_income') }}" class="euro" placeholder="€">
                   {!! $errors->first('net_income', '<label class="err">:message</label>') !!}
                 </div>
 
-                <div class="col-lg-7 form-input-box">
-                  <label class="form-label">Cantidad solicitada <sup>(*)</sup></label>
+                <div class="col-lg-4 form-input-box">
+                  <label class="form-label">Cantidad solicitada</label>
                   <input type="text" name="requested_amount" value="{{ old('requested_amount') }}" class="euro" placeholder="€">
                   {!! $errors->first('requested_amount', '<label class="err">:message</label>') !!}
                 </div>
-              </div>
 
-              <div class="row">
-                <div class="col-12 form-input-box">
-                  <label class="form-label">Franja horaria <sup>(*)</sup></label>
+                <div class="col-lg-4 form-input-box">
+                  <label class="form-label">Franja horaria</label>
                   <select name="time_slot"><br>
                     <option value="1">1</option>
                     <option value="2">2</option>
